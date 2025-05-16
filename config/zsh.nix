@@ -26,7 +26,7 @@
       }
     ];
  
-    initExtra = ''
+    initContent = ''
       # Detect which `ls` flavor is in use
       if ls --color > /dev/null 2>&1; then # GNU `ls`
               colorflag="--color"
@@ -59,7 +59,7 @@
   programs.starship.enable = true;
   programs.starship.settings = {
     add_newline = false;
-    format = "$shlvl$shell$username$hostname$nix_shell$git_branch$git_commit$git_state$git_status$directory$jobs$cmd_duration$character";
+    format = "$shlvl$username$hostname$nix_shell$git_branch$git_commit$git_state$git_status$directory$jobs$cmd_duration$character";
     shlvl = {
       disabled = false;
       symbol = "ﰬ";

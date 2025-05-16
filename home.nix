@@ -18,7 +18,7 @@
   services.gpg-agent = {
     enable = true;
     enableSshSupport = true;
-    pinentryPackage = pkgs.pinentry_mac;
+    pinentry.package = pkgs.pinentry_mac;
     extraConfig = ''
       allow-loopback-pinentry
       default-cache-ttl 600
@@ -31,13 +31,6 @@
     GPG_AGENT_INFO = "";
     SSH_AUTH_SOCK = "$(gpgconf --list-dirs agent-ssh-socket)";
   };
-
-  # Add GPG configuration to shell
-  programs.zsh.initExtra = ''
-    # GPG and SSH agent configuration
-    export GPG_TTY=$(tty)
-    gpg-connect-agent /bye >/dev/null 2>&1 || gpgconf --launch gpg-agent
-  '';
 
   home.packages = with pkgs; [
     pinentry_mac

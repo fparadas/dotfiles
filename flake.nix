@@ -2,7 +2,7 @@
   description = "Example nix-darwin system flake";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-24.05-darwin";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     nix-darwin.url = "github:LnL7/nix-darwin";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     home-manager = {
@@ -15,7 +15,7 @@
  {
     # Build darwin flake using:
     # $ darwin-rebuild build --flake .#Felipes-MacBook-Air
-    darwinConfigurations."Felipes-MacBook-Air" = nix-darwin.lib.darwinSystem {
+    darwinConfigurations."fparadass-MacBook-Air" = nix-darwin.lib.darwinSystem {
       modules = [
        ./config.nix 
        home-manager.darwinModules.home-manager {

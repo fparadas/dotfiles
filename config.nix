@@ -46,16 +46,26 @@
     zsh-autosuggestions
     zsh-nix-shell
     zsh-syntax-highlighting
-
-    # Pinentry
-    pinentry_mac
     ];
 
-system.activationScripts.postActivation.text = ''
-    # Create gpg-agent socket directory if it doesn't exist
-    mkdir -p ~/.gnupg
-    chmod 700 ~/.gnupg
-  '';
+
+  homebrew = {
+    enable = true;
+    casks = [
+      # Browser
+      "arc"
+
+      # Mac Essentials
+      "rectangle"
+
+
+      # Dev Utils
+      "ghostty"
+      "docker"
+      "visual-studio-code"
+      "cursor"
+    ];
+  };
 
   # Necessary for using flakes on this system.
   nix.settings.experimental-features = "nix-command flakes";
@@ -70,11 +80,8 @@ system.activationScripts.postActivation.text = ''
   # The platform the configuration will be used on.
   nixpkgs.hostPlatform = "aarch64-darwin";
 
-  nix.configureBuildUsers = true;
-  nix.useDaemon = true;
-  services.nix-daemon.enable = true;
   # OsX Settings
-  security.pam.enableSudoTouchIdAuth = true;
+  security.pam.services.sudo_local.touchIdAuth = true;
   system.defaults = {
     NSGlobalDomain.AppleInterfaceStyle = "Dark";
     finder = {
@@ -91,7 +98,7 @@ system.activationScripts.postActivation.text = ''
       show-recents = false;
       mru-spaces = true;
       persistent-apps =[
-        "/Applications/Alacritty.app"
+        "/Applications/Ghostty.app"
         "/Applications/Arc.app"
       ];
       persistent-others = [
@@ -108,22 +115,6 @@ system.activationScripts.postActivation.text = ''
     home = "/Users/fparadas";
   };
 
-  # homebrew = {
-  #   enable = true;
-  #   casks = [
-  #     # Browser
-  #     "arc"
 
-  #     # Mac Essentials
-  #     "rectangle"
-
-
-  #     # Dev Utils
-  #     "ghostty"
-  #     "docker"
-  #     "visual-studio-code"
-  #     "cursor"
-  #   ];
-  # };
 }
 
