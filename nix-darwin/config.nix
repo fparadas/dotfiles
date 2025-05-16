@@ -4,7 +4,10 @@
       # $ nix-env -qaP | grep wget
       environment.systemPackages = with pkgs; [ 
 	  git	  
+    gh
+    gnupg
 
+    postgresql_16
 	  # Editors
 	  vim
 	  helix
@@ -22,10 +25,22 @@
 	  python3
 	  python3Packages.pip
 
+    # Erlang
+    erlang_26
+    rebar3
+
     # Elixir
     elixir
     elixir_ls
 
+    # Gleam
+    gleam
+    
+    # Fly.IO
+    awscli
+    azure-cli
+    flyctl
+    
 	  # Shell
 	  zsh
 	  zsh-autosuggestions
@@ -57,12 +72,14 @@
           AppleShowAllExtensions = true;
           AppleShowAllFiles = true;
           FXPreferredViewStyle = "Nlsv";
+          ShowPathbar = true;
         };
         loginwindow.LoginwindowText = "Bom dia, Felipe!";
         screencapture.location = "~/Pictures/screeenshots";
 
         dock = {
           autohide = true;
+          show-recents = false;
           mru-spaces = true;
           persistent-apps =[
             "/Applications/Alacritty.app"
@@ -82,19 +99,22 @@
         home = "/Users/fparadas";
       };
 
-      homebrew = {
-        enable = true;
-        casks = [
-          # Browser
-          "arc"
+      # homebrew = {
+      #   enable = true;
+      #   casks = [
+      #     # Browser
+      #     "arc"
+
+      #     # Mac Essentials
+      #     "rectangle"
 
 
-          # Dev Utils
-          "alacritty"
-          "docker"
-          "insomnia"
-          "visual-studio-code"
-        ];
-      };
+      #     # Dev Utils
+      #     "ghostty"
+      #     "docker"
+      #     "visual-studio-code"
+      #     "cursor"
+      #   ];
+      # };
     }
 

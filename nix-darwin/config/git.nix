@@ -30,6 +30,7 @@
 
       core = {
         ignorecase = "false";
+        editor = "vim";
       };
 
       pull = {
