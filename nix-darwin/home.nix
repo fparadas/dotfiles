@@ -9,6 +9,40 @@
   # paths it should manage.
   home.username = "fparadas";
   home.homeDirectory = "/Users/fparadas";
+
+  # GPG Configuration
+  programs.gpg = {
+    enable = true;
+  };
+
+  services.gpg-agent = {
+    enable = true;
+    enableSshSupport = true;
+    pinentryPackage = pkgs.pinentry_mac;
+    extraConfig = ''
+      allow-loopback-pinentry
+      default-cache-ttl 600
+      max-cache-ttl 7200
+    '';
+  };
+
+  home.sessionVariables = {
+    GPG_TTY = "$(tty)";
+    GPG_AGENT_INFO = "";
+    SSH_AUTH_SOCK = "$(gpgconf --list-dirs agent-ssh-socket)";
+  };
+
+  # Add GPG configuration to shell
+  programs.zsh.initExtra = ''
+    # GPG and SSH agent configuration
+    export GPG_TTY=$(tty)
+    gpg-connect-agent /bye >/dev/null 2>&1 || gpgconf --launch gpg-agent
+  '';
+
+  home.packages = with pkgs; [
+    pinentry_mac
+  ];
+
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
   # when a new Home Manager release introduces backwards
