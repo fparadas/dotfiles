@@ -3,11 +3,18 @@
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
   environment.systemPackages = with pkgs; [ 
+    
+    # Git and Dev essentials
     git	  
     gh
     gnupg
 
+    # asdf
+    asdf-vm
+
+    # Databases
     postgresql_16
+
     # Editors
     vim
     helix
@@ -54,6 +61,7 @@
     casks = [
       # Browser
       "arc"
+      "google-chrome"
 
       # Mac Essentials
       "rectangle"
@@ -91,7 +99,7 @@
       ShowPathbar = true;
     };
     loginwindow.LoginwindowText = "Bom dia, Felipe!";
-    screencapture.location = "~/Pictures/screeenshots";
+    screencapture.target = "clipboard";
 
     dock = {
       autohide = true;

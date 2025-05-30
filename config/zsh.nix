@@ -27,6 +27,12 @@
     ];
  
     initContent = ''
+
+      # asdf
+      . "${pkgs.asdf-vm}/share/asdf-vm/asdf.sh"
+      autoload -Uz bashcompinit && bashcompinit
+      . "${pkgs.asdf-vm}/share/asdf-vm/completions/asdf.bash"
+      
       # Detect which `ls` flavor is in use
       if ls --color > /dev/null 2>&1; then # GNU `ls`
               colorflag="--color"
