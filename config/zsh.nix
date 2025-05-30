@@ -49,6 +49,7 @@
       export TERM='xterm-256color';
 
       export PATH="$PATH:/opt/homebrew/bin";
+      export PATH="$PATH:$HOME/google-cloud-sdk/bin/gcloud";
     '';
 
     shellAliases = {
