@@ -49,4 +49,11 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
   programs.zsh.enable = true;
+
+  # Direnv Configuration
+  programs.direnv = {
+    enable = true;
+    enableZshIntegration = true;
+    nix-direnv.enable = true;
+  };
 }
