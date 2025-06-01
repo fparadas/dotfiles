@@ -26,6 +26,7 @@
     # Nix
     hydra-check
     nil
+    nixfmt-rfc-style
 
     # Python
     pipenv
