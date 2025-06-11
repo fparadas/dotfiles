@@ -8,6 +8,7 @@
     git	  
     gh
     gnupg
+    claude-code
 
     # asdf
     asdf-vm
@@ -88,6 +89,7 @@
 
   # The platform the configuration will be used on.
   nixpkgs.hostPlatform = "aarch64-darwin";
+  nixpkgs.config.allowUnfree = true;
 
   # OsX Settings
   security.pam.services.sudo_local.touchIdAuth = true;
