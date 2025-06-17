@@ -67,6 +67,7 @@
 
       # Mac Essentials
       "rectangle"
+      "raycast"
 
 
       # Dev Utils
@@ -82,6 +83,9 @@
 
   # Enable alternative shell support in nix-darwin.
   # programs.fish.enable = true;
+
+  # Set the primary user for the system.
+  system.primaryUser = "fparadas";
 
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
