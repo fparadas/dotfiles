@@ -9,6 +9,7 @@
     gh
     gnupg
     claude-code
+    tree
 
     # asdf
     asdf-vm
