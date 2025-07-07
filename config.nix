@@ -10,6 +10,7 @@
     gnupg
     claude-code
     tree
+    docker
 
     # asdf
     asdf-vm
@@ -73,7 +74,6 @@
 
       # Dev Utils
       "ghostty"
-      "docker"
       "visual-studio-code"
       "cursor"
     ];
