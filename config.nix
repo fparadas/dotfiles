@@ -11,6 +11,7 @@
     claude-code
     tree
     docker
+    wireguard-tools
 
     # asdf
     asdf-vm
