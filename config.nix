@@ -8,10 +8,12 @@
     git	  
     gh
     gnupg
-    claude-code
     tree
     docker
-    wireguard-tools
+
+    # AI
+    claude-code
+    gemini-cli
 
     # asdf
     asdf-vm
