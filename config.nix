@@ -40,12 +40,12 @@
     python3Packages.pip
 
     # Erlang
-    erlang_26
-    rebar3
+    beamMinimal28Packages.erlang
+    beamMinimal28Packages.rebar3
 
     # Elixir
-    elixir
-    elixir_ls
+    beamMinimal28Packages.elixir
+    beamMinimal28Packages.elixir-ls
 
     # Gleam
     gleam
