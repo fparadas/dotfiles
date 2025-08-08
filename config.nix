@@ -14,6 +14,10 @@
     # AI
     claude-code
     gemini-cli
+    codex
+
+    # IDEs
+    code-cursor
 
     # asdf
     asdf-vm
@@ -78,7 +82,6 @@
       # Dev Utils
       "ghostty"
       "visual-studio-code"
-      "cursor"
     ];
   };
 

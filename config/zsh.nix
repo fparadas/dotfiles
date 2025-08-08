@@ -50,6 +50,7 @@
 
       export PATH="$PATH:/opt/homebrew/bin";
       export PATH="$PATH:$HOME/google-cloud-sdk/bin";
+      export PATH="$HOME/.local/bin:$PATH";
     '';
 
     shellAliases = {
