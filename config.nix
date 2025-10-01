@@ -1,20 +1,26 @@
 { pkgs, ... }:
- {
+{
+  
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
-  environment.systemPackages = with pkgs; [ 
-    
+  environment.systemPackages = with pkgs; [
+
     # Git and Dev essentials
-    git	  
+    git
     gh
     gnupg
     tree
-    docker
+
+    # Containers
+    dive # look into docker image layers
+    podman
+    podman-tui # status of containers in the terminal
+    podman-compose # start group of containers for dev
+
 
     # AI
     claude-code
     gemini-cli
-    codex
 
     # IDEs
     code-cursor
@@ -30,8 +36,7 @@
     helix
 
     # Node
-    nodejs-slim_20
-    nodePackages.npm
+    nodejs_24
 
     # Nix
     hydra-check
@@ -51,39 +56,37 @@
     beamMinimal28Packages.elixir
     beamMinimal28Packages.elixir-ls
 
-    # Gleam
-    gleam
-    
     # Fly.IO
     awscli
     azure-cli
     flyctl
-    
+
     # Shell
     zsh
     zsh-autosuggestions
     zsh-nix-shell
     zsh-syntax-highlighting
-    ];
-
+  ];
 
   homebrew = {
     enable = true;
     casks = [
       # Browser
       "arc"
-      "google-chrome"
 
       # Mac Essentials
       "rectangle"
       "raycast"
 
-
       # Dev Utils
       "ghostty"
-      "visual-studio-code"
     ];
   };
+
+  # NOTE: `virtualisation.*` options are NixOS-only and not supported on nix-darwin.
+  # If you need Podman on macOS, install the client via packages or Homebrew and
+  # manage its VM (podman machine) outside of nix-darwin modules.
+
 
   # Necessary for using flakes on this system.
   nix.settings.experimental-features = "nix-command flakes";
@@ -119,7 +122,7 @@
       autohide = true;
       show-recents = false;
       mru-spaces = true;
-      persistent-apps =[
+      persistent-apps = [
         "/Applications/Ghostty.app"
         "/Applications/Arc.app"
       ];
@@ -131,12 +134,9 @@
     };
   };
 
-
   users.users.fparadas = {
     name = "fparadas";
     home = "/Users/fparadas";
   };
 
-
 }
-

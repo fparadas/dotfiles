@@ -29,7 +29,7 @@ git clone https://github.com/fparadas/dotfiles.git ~/dotfiles
 ### 4. Build and apply configuration
 
 ```bash
-darwin-rebuild switch --flake ~/dotfiles
+sudo darwin-rebuild switch --flake ~/dotfiles
 ```
 
 ## Managing the configuration
@@ -37,7 +37,7 @@ darwin-rebuild switch --flake ~/dotfiles
 ### Rebuilding after changes
 
 ```bash
-darwin-rebuild switch --flake ~/dotfiles
+sudo darwin-rebuild switch --flake ~/dotfiles
 ```
 
 ### Update dependencies
