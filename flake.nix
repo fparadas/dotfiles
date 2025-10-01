@@ -14,8 +14,8 @@
   outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager }:
  {
     # Build darwin flake using:
-    # $ darwin-rebuild build --flake .#Felipes-MacBook-Air
-    darwinConfigurations."fparadass-MacBook-Air" = nix-darwin.lib.darwinSystem {
+    # $ darwin-rebuild build --flake .#Felipes-MacBook-Pro
+    darwinConfigurations."Felipes-MacBook-Pro" = nix-darwin.lib.darwinSystem {
       modules = [
        ./config.nix 
        home-manager.darwinModules.home-manager {
@@ -27,6 +27,6 @@
     };
 
     # Expose the package set, including overlays, for convenience.
-    darwinPackages = self.darwinConfigurations."Felipes-MacBook-Air".pkgs;
+    darwinPackages = self.darwinConfigurations."Felipes-MacBook-Pro".pkgs;
   };
 }
