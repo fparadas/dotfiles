@@ -80,9 +80,11 @@
       # Mac Essentials
       "rectangle"
       "raycast"
+      "stats"
 
       # Dev Utils
       "ghostty"
+      
     ];
   };
 
