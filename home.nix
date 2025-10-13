@@ -4,6 +4,7 @@
   imports = [
     ./config/zsh.nix
     ./config/git.nix
+    ./config/claude.nix
   ];
   # Home Manager needs a bit of information about you and the
   # paths it should manage.

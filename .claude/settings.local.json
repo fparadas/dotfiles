@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Users/fparadas/.config/**)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
