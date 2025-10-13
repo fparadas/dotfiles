@@ -10,6 +10,8 @@
     gh
     gnupg
     tree
+    graphite-cli
+    jq
 
     # Containers
     dive # look into docker image layers
@@ -21,6 +23,7 @@
     # AI
     claude-code
     gemini-cli
+    ollama
 
     # IDEs
     code-cursor
