@@ -76,6 +76,7 @@
     casks = [
       # Browser
       "arc"
+      "notion"
 
       # Mac Essentials
       "rectangle"
