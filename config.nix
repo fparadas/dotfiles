@@ -84,6 +84,9 @@
 
       # Dev Utils
       "ghostty"
+
+      # AI
+      "claude"
       
     ];
   };
