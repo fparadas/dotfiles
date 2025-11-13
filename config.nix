@@ -12,6 +12,7 @@
     tree
     graphite-cli
     jq
+    just
 
     # Containers
     dive # look into docker image layers
@@ -50,6 +51,8 @@
     pipenv
     python3
     python3Packages.pip
+    rye
+
 
     # Erlang
     beamMinimal28Packages.erlang
