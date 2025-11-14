@@ -34,6 +34,7 @@
 
     # Databases
     postgresql_16
+    duckdb
 
     # Editors
     vim
